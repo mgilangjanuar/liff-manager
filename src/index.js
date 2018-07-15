@@ -19,6 +19,7 @@ app.set('view engine', 'pug')
 
 app.use(express.static(`${__dirname}/../node_modules/bootstrap/dist`))
 app.use(express.static(`${__dirname}/../node_modules/jquery/dist`))
+app.use(express.static(`${__dirname}/../assets`))
 
 
 app.use('/', index())

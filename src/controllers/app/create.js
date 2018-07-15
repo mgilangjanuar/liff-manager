@@ -20,10 +20,7 @@ async function _store(req, res) {
         }
       }
     )
-  } catch (err) {
-    console.log(err)
-    return res.send('Bad Request')
-  }
+  } catch (err) { return res.send(`Bad Request\n<pre>${JSON.stringify(err.response.data)}</pre>`) }
   return res.redirect('/dashboard')
 }
 

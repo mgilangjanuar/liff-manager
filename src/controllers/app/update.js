@@ -7,10 +7,7 @@ async function _view(req, res) {
         'Authorization': `Bearer ${req.cookies.channel.token}`
       }
     })
-  } catch (err) {
-    console.log(`ERR ${err}`)
-    return res.send('Bad Request')
-  }
+  } catch (err) { return res.send(`Bad Request\n<pre>${JSON.stringify(err.response.data)}</pre>`) }
   const apps = requestApps.data.apps.filter(e => e.liffId == req.params.id)
   return res.render('app/update', {
     _title: 'Update',
@@ -34,10 +31,7 @@ async function _store(req, res) {
         }
       }
     )
-  } catch (err) {
-    console.log(`ERR ${err}`)
-    return res.send('Bad Request')
-  }
+  } catch (err) { return res.send(`Bad Request\n<pre>${JSON.stringify(err.response.data)}</pre>`) }
   return res.redirect('/dashboard')
 }
 

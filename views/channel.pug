@@ -1,0 +1,19 @@
+extends ./layout
+
+block content
+  .row
+    .col-md-4.col-lg-3.d-md-block.d-none
+      a.btn.btn-outline-success.btn-block.text-left(href="/dashboard") Dashboard
+      a.btn.btn-success.btn-block.text-left(href="/channel") My Channel
+    .col-md-8.col-lg-9.col-sm-12
+      .card
+        .card-body
+          .form-group
+            label(for="channelID") Channel ID
+            input.form-control#channelID(type="text", value=_channel.id, readonly)
+          .form-group
+            label(for="channelID") Channel Secret
+            input.form-control#channelID(type="password", value=_channel.secret, readonly)
+          .form-group
+            label(for="channelID") Access Token
+            input.form-control#channelID(type="text", value=_channel.token, readonly)

@@ -1,0 +1,51 @@
+extends ../layout
+
+block content
+  .row
+    .col-sm-8.offset-sm-2.col-md-6.offset-md-3
+      .card
+        .card-header Update LIFF App
+        .card-body
+          form(method="POST")
+            .form-group.row
+              label.col-lg-2.col-form-label(for="liffId") LIFF ID
+              .col-lg-10
+                input.form-control#liffId(
+                  type="text",
+                  name="liffId",
+                  value=app.liffId,
+                  disabled
+                )
+            .form-group.row
+              label.col-lg-2.col-form-label(for="url") URL
+              .col-lg-10
+                input.form-control#url(
+                  type="url",
+                  name="url",
+                  value=app.view.url
+                  required
+                )
+            fieldset.form-group
+              .row
+                legend.col-form-label.col-lg-2.pt-0 Type
+                .col-lg-10
+                  .form-check
+                    if app.view.type === 'compact'
+                      input.form-check-input#typeCompact(type="radio", name="type", value="compact", required, checked)
+                    else
+                      input.form-check-input#typeCompact(type="radio", name="type", value="compact", required)
+                    label.form-check-label(for="typeCompact") Compact
+                  .form-check
+                    if app.view.type === 'tall'
+                      input.form-check-input#typeTall(type="radio", name="type", value="tall", required, checked)
+                    else
+                      input.form-check-input#typeTall(type="radio", name="type", value="tall", required)
+                    label.form-check-label(for="typeTall") Tall
+                  .form-check
+                    if app.view.type === 'full'
+                      input.form-check-input#typeFull(type="radio", name="type", value="full", required, checked)
+                    else
+                      input.form-check-input#typeFull(type="radio", name="type", value="full", required)
+                    label.form-check-label(for="typeFull") Full
+            .text-right
+              button.btn.btn-success Submit

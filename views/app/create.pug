@@ -1,0 +1,35 @@
+extends ../layout
+
+block content
+  .row
+    .col-sm-8.offset-sm-2.col-md-6.offset-md-3
+      .card
+        .card-header Create LIFF App
+        .card-body
+          p.small.text-muted Please read 
+            a(href="https://developers.line.me/en/docs/liff/overview") https://developers.line.me/en/docs/liff/overview
+            |  for details.
+          form(method="POST")
+            .form-group.row
+              label.col-lg-2.col-form-label(for="url") URL
+              .col-lg-10
+                input.form-control#url(
+                  type="url",
+                  name="url",
+                  required
+                )
+            fieldset.form-group
+              .row
+                legend.col-form-label.col-lg-2.pt-0 Type
+                .col-lg-10
+                  .form-check
+                    input.form-check-input#typeCompact(type="radio", name="type", value="compact", required)
+                    label.form-check-label(for="typeCompact") Compact
+                  .form-check
+                    input.form-check-input#typeTall(type="radio", name="type", value="tall", required)
+                    label.form-check-label(for="typeTall") Tall
+                  .form-check
+                    input.form-check-input#typeFull(type="radio", name="type", value="full", required)
+                    label.form-check-label(for="typeFull") Full
+            .text-right
+              button.btn.btn-success Submit

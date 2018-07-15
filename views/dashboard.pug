@@ -1,0 +1,36 @@
+extends ./layout
+
+block content
+  .row
+    .col-md-4.col-lg-3.d-md-block.d-none
+      a.btn.btn-success.btn-block.text-left(href="/dashboard") Dashboard
+      a.btn.btn-outline-success.btn-block.text-left(href="/channel") My Channel
+    .col-md-8.col-lg-9.col-sm-12
+      .card
+        .card-body
+          div
+            a.btn.btn-success(href="/app/create") Create
+          if data.apps
+            .table-responsive.mt-3
+              table.table.table-striped
+                thead.bg-success.text-white
+                  tr
+                    th.text-center #
+                    th.text-center ID
+                    th.text-center Type
+                    th.text-center URL
+                    th.text-center Actions
+                tbody
+                  each app, i in data.apps
+                    tr
+                      td.align-middle #{i + 1}
+                      td.align-middle #{app.liffId}
+                      td.align-middle #{app.view.type}
+                      td.align-middle: a(href=app.view.url) #{app.view.url}
+                      td.align-middle
+                        a.btn.btn-warning.btn-sm.mr-2.pt-0.pb-0(href="/app/" + app.liffId + "/update") Edit
+                        a.btn.btn-danger.btn-sm.pt-0.pb-0(href="/app/" + app.liffId + "/delete", onclick="if (!confirm('Are you sure?')) return false") Delete
+            p.text-muted.small.text-right URL for your LIFF app is 
+              u: em line://app/{LIFF ID}
+          else
+            p.small.text-muted.mt-3: em You haven't any LIFF apps yet.

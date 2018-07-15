@@ -1,0 +1,28 @@
+extends ./layout
+
+block content
+  .row
+    .col-sm-8.offset-sm-2.col-md-6.offset-md-3
+      .card
+        .card-header Register
+        .card-body
+          p.small.text-muted Get the channel ID and secret from your chanel (read more: 
+            a(href="https://developers.line.me/en/docs/liff/getting-started") https://developers.line.me/en/docs/liff/getting-started
+            | )
+          form(method="POST")
+            .form-group
+              input.form-control(
+                type="text",
+                placeholder="Channel ID",
+                name="channelID",
+                required
+              )
+            .form-group
+              input.form-control(
+                type="password",
+                placeholder="Channel Secret",
+                name="channelSecret",
+                required
+              )
+            .text-right
+              button.btn.btn-success Submit

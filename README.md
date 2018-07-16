@@ -13,7 +13,7 @@
  - Clone this repository
  - Install all depedencies with run `npm install`
  - Run `npm start` on production or `npm run serve` on development phase
- - Or just visit [https://liff-manager.mgilangjanuar.com]()
+ - Or just visit [https://liff-manager.mgilangjanuar.com](https://liff-manager.mgilangjanuar.com)
 
 ## How to Contribute
 

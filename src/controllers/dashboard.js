@@ -8,7 +8,7 @@ export default async function(req, res) {
         'Authorization': `Bearer ${req.cookies.channel.token}`
       }
     })
-  } catch (err) { return res.send(`Bad Request\n<pre>${JSON.stringify(err.response.data)}</pre>`) }
+  } catch (err) { return res.redirect('/app/create') }
   return res.render('dashboard', {
     _title: 'Dashboard',
     _channel: req.cookies.channel,

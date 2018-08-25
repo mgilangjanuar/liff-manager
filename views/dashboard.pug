@@ -18,7 +18,7 @@ block content
                     th #
                     th ID
                     th Type
-                    th URL
+                    th Target URL
                     th Actions
                 tbody
                   each app, i in data.apps
@@ -28,9 +28,10 @@ block content
                       td.align-middle #{app.view.type}
                       td.align-middle: a(href=app.view.url) #{app.view.url}
                       td.align-middle
+                        a.btn.btn-primary.btn-sm.mr-1.pt-0.pb-0(onclick="clipboard.writeText('line://app/" + app.liffId + "')") Copy LIFF URL
                         a.btn.btn-warning.btn-sm.mr-1.pt-0.pb-0(href="/app/" + app.liffId + "/update") Edit
                         a.btn.btn-danger.btn-sm.pt-0.pb-0(href="/app/" + app.liffId + "/delete", onclick="if (!confirm('Are you sure?')) return false") Delete
             p.text-muted.small.text-right URL for your LIFF app is 
               u: em line://app/{LIFF ID}
           else
-            p.small.text-muted.mt-3: em You haven't any LIFF apps yet.
+            p.small.text-muted.mt-3: em You don't have any LIFF apps yet.

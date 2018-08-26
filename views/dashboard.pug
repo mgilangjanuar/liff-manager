@@ -2,6 +2,8 @@ extends ./layout
 
 append scripts
   script(src="/clipboard-polyfill.js")
+append styles
+  link(rel="stylesheet" href="/css/font-awesome.min.css")
 block content
   .row
     .col-md-4.col-lg-3.d-md-block.d-none
@@ -30,9 +32,12 @@ block content
                       td.align-middle #{app.view.type}
                       td.align-middle: a(href=app.view.url) #{app.view.url}
                       td.align-middle
-                        a.btn.btn-primary.btn-sm.mr-1.pt-0.pb-0(onclick="clipboard.writeText('line://app/" + app.liffId + "')") Copy LIFF URL
-                        a.btn.btn-warning.btn-sm.mr-1.pt-0.pb-0(href="/app/" + app.liffId + "/update") Edit
-                        a.btn.btn-danger.btn-sm.pt-0.pb-0(href="/app/" + app.liffId + "/delete", onclick="if (!confirm('Are you sure?')) return false") Delete
+                        a.btn.btn-primary.btn-md.mr-1.pt-0.pb-0(onclick="clipboard.writeText('line://app/" + app.liffId + "')", data-toggle="tooltip", data-placement="bottom" title="Copy LIFF URL")
+                          i.fa.fa-clipboard
+                        a.btn.btn-warning.btn-md.mr-1.pt-0.pb-0(href="/app/" + app.liffId + "/update", data-toggle="tooltip", data-placement="bottom" title="Edit")
+                          i.fa.fa-pencil
+                        a.btn.btn-danger.btn-md.pt-0.pb-0(href="/app/" + app.liffId + "/delete", onclick="if (!confirm('Are you sure?')) return false", data-toggle="tooltip", data-placement="bottom" title="Delete")
+                          i.fa.fa-trash
             p.text-muted.small.text-right URL for your LIFF app is 
               u: em line://app/{LIFF ID}
           else

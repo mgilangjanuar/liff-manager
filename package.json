@@ -27,10 +27,12 @@
     "axios": "^0.18.0",
     "body-parser": "^1.18.3",
     "bootstrap": "^4.1.2",
+    "clipboard-polyfill": "^2.5.2",
     "cookie-parser": "^1.4.3",
     "dotenv": "^6.0.0",
     "express": "^4.16.3",
     "jquery": "^3.3.1",
-    "pug": "^2.0.3"
+    "pug": "^2.0.3",
+    "font-awesome": "^4.7.0"
   }
 }

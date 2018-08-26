@@ -19,6 +19,8 @@ app.set('view engine', 'pug')
 
 app.use(express.static(`${__dirname}/../node_modules/bootstrap/dist`))
 app.use(express.static(`${__dirname}/../node_modules/jquery/dist`))
+app.use(express.static(`${__dirname}/../node_modules/clipboard-polyfill/build`))
+app.use(express.static(`${__dirname}/../node_modules/font-awesome`))
 app.use(express.static(`${__dirname}/../assets`))
 
 

@@ -1,4 +1,5 @@
 import axios from 'axios'
+import URLValidation from '../../helpers/URLValidation'
 
 async function _view(req, res) {
   try {
@@ -17,6 +18,10 @@ async function _view(req, res) {
 }
 
 async function _store(req, res) {
+  if (!URLValidation(req.body.url)) {
+    return res.send(`Bad Request\n<pre>URL not valid</pre>`)
+  }
+
   try {
     await axios.put(
       `https://api.line.me/liff/v1/apps/${req.params.id}/view`,

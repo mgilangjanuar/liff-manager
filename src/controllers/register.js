@@ -22,7 +22,9 @@ async function _store(req, res) {
         }
       }
     )
-  } catch (err) { return res.send(`Bad Request\n<pre>${JSON.stringify(err.response.data)}</pre>`) }
+  } catch (err) { 
+    return res.render('register', { _title: 'Register', _err_data: err.response.data})
+  }
   return res.cookie(
     'channel', {
       id: req.body.channelID,

@@ -6,10 +6,12 @@ block content
       .card
         .card-header Register
         .card-body
+          if _err_data
+            .alert.alert-danger(role="alert") Error: #{_err_data.error_description}
           p.small.text-muted Get the channel ID and channel secret from your channel (read more: 
             a(href="https://developers.line.me/en/docs/liff/getting-started") https://developers.line.me/en/docs/liff/getting-started
             | )
-          form(method="POST")
+          form(method="POST", id="form-register")
             .form-group
               input.form-control(
                 type="text",

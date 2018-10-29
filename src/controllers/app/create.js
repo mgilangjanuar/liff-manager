@@ -10,7 +10,11 @@ function _view(req, res) {
 
 async function _store(req, res) {
   if (!URLValidation(req.body.url)) {
-    return res.send(`Bad Request\n<pre>URL not valid</pre>`)
+    // return res.send(`Bad Request\n<pre>URL not valid</pre>`)
+    const msg = {
+      error_description: 'Bad Request, URL not valid'
+    }
+    return res.render('app/create', { _title: 'Create', _err_data: msg})
   }
 
   try {
@@ -24,7 +28,9 @@ async function _store(req, res) {
         }
       }
     )
-  } catch (err) { return res.send(`Bad Request\n<pre>${JSON.stringify(err.response.data)}</pre>`) }
+  } catch (err) {
+    return res.render('app/create', { _title: 'Create', _err_data: err.response.data})
+  }
   return res.redirect('/dashboard')
 }
 

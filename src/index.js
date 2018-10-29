@@ -14,7 +14,6 @@ app.use(bodyParser.json())
 
 app.use(cookieParser())
 
-
 app.set('view engine', 'pug')
 
 app.use(express.static(`${__dirname}/../node_modules/bootstrap/dist`))

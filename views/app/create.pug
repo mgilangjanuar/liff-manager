@@ -6,6 +6,8 @@ block content
       .card
         .card-header Create LIFF App
         .card-body
+          if _err_data
+            .alert.alert-danger(role="alert") Error: #{_err_data.error_description}
           p.small.text-muted Please read 
             a(href="https://developers.line.me/en/docs/liff/overview") https://developers.line.me/en/docs/liff/overview
             |  for details.

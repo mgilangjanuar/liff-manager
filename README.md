@@ -1,6 +1,6 @@
 # LIFF Manager
 
-[LIFF (LINE Front-end Framework)](https://developers.line.biz/en/docs/liff/overview) Manager is an unofficial tool for manage your LIFF apps. This application made by [M Gilang Januar](https://www.line-community.me/contributors/detail?apiId=0037F00000ZnJvgQAF) (a LINE API Expert from Indonesia). Due to this project is open source with MIT license, you can contribute by fork this repository and make a pull request. We don't use any database or storage, all your credentials are stored on cookies so it's safe and can't be taken by anyone.
+[LIFF (LINE Front-end Framework)](https://developers.line.biz/en/docs/liff/overview) Manager is an unofficial tool to manage your LIFF apps. This application is made by [M Gilang Januar](https://www.line-community.me/contributors/detail?apiId=0037F00000ZnJvgQAF) (a LINE API Expert from Indonesia). As this is an open-source project with MIT license, you can contribute by forking this repository and creating a pull request. We don't use any database or remote storage; all your credentials are stored in cookies, so it's safe and can't be taken by anyone.
 
 ![screenshot](./screenshot.png)
 
@@ -11,9 +11,10 @@
 ## Getting Started
 
  - Clone this repository
- - Install all depedencies with run `npm install`
+ - Install all depedencies by running `npm install`
  - Run `npm start` on production or `npm run serve` on development phase
- - Or just visit [https://liff-manager.mgilangjanuar.com](https://liff-manager.mgilangjanuar.com)
+ 
+ You can see the actual implementation by visiting [https://liff-manager.mgilangjanuar.com](https://liff-manager.mgilangjanuar.com)
 
 ## How to Contribute
 
